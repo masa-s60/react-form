@@ -1,19 +1,20 @@
-import { useState } from 'react';
 import { FC } from "react";
-const SelectButton:FC<{radioButtonItems: string[]}> = (props) => {
-  const [checkedButton, setButton] = useState<string>(props.radioButtonItems[0]);
+import { useDispatch } from 'react-redux';
 
+const SelectButton:FC<{radioButtonItems: string[], reducer: Function, state: string, labelID: string[] }> = (props) => {
+  const dispatch = useDispatch();
   return(
     <div>
-      {props.radioButtonItems.map( (item) => {
+      {props.radioButtonItems.map( (item, index) => {
         return(
-          <label key={item} htmlFor={item}>
-            <input id={item} 
-            className="p-radio-button" 
-            type="radio" 
-            onChange={ e => setButton(e.target.value)}
-            value={item} 
-            checked={item === checkedButton}/>{item}
+          <label key={item} htmlFor={props.labelID[index]}>
+            <input id={props.labelID[index]} 
+              className="p-radio-button" 
+              type="radio" 
+              onChange={ e => dispatch(props.reducer(e.target.value as string))}
+              value={item} 
+              checked={item === props.state}
+            />{item}
           </label>
         )
       })}

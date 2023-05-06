@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './form-data-slice';
+import formDataReducer from './form-data-slice';
+import stepReducer from './step-slice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    formData: formDataReducer,
+    formStep: stepReducer,
   },
 });

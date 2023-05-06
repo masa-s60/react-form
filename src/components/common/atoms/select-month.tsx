@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setBirthdayMonth } from '../../../store/form-data-slice';
 import { useCreateMonthsList } from '../../container/create-date';
+import { rootFormData } from "../../../types/types";
 
 const SelectMonth = () => {
-  const [birthdayMonth, setBirthdayMonth] = useState<string>('1');
+  const dispatch = useDispatch();
+  const selectMonth = useSelector<rootFormData>((state) => state.formData.birthdayMonth);
   const monthsListObject = useCreateMonthsList();
   return(
     <div>
-      <select onChange={ e => setBirthdayMonth(e.target.value)}>
+      <select value={selectMonth as string} onChange={ e => dispatch(setBirthdayMonth(e.target.value))}>
         {monthsListObject.map( (item, index) => {
           return(
             <option key={index}>

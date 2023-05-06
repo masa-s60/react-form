@@ -1,11 +1,17 @@
-import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { rootFormData } from '../../../types/types';
+import { setConsultation } from '../../../store/form-data-slice';
 const TextArea = () => {
-  const [text, setText] = useState<string>('');
+  const dispatch = useDispatch();
+  const consultation = useSelector<rootFormData>((state) => state.formData.consultation);
 
   return(
     <div style={{textAlign: "center"}}>
-      <textarea style={{ width: "600px", height: "400px"}} onChange={ e => setText(e.target.value)} className="p-question-detailed__input-text"></textarea> 
+      <textarea 
+        style={{ width: "600px", height: "400px"}} 
+        value={consultation as string}
+        onChange={ e => dispatch(setConsultation(e.target.value))}>
+      </textarea> 
     </div>
   )
 }

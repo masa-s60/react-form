@@ -1,13 +1,19 @@
-import { FC } from "react";
-import { useState } from 'react';
+import { useSelector } from "react-redux";
+import { rootStepNumber } from "../../types/types";
 
-export const ChangeButtonTransition = (formStepNum: string) => {
-  const [back, setBack] = useState<string>('/');
-  const [next, setNext] = useState<string>('/formStep2/');
-
-  if(formStepNum === '2') {
-    setNext('/formStep3/');
+export const ChangeButtonTransition = () => {
+  const stepNum = useSelector<rootStepNumber>((state) => state.formStep.stepNumber);
+  let back;
+  let next;
+  if(stepNum === 1) {
+    back = '/';
+    next = '/formStep2/';
+  } else if(stepNum === 2) {
+    back = '/';
+    next = '/formStep3/';
+  } else if(stepNum === 3) {
+    back = '/formStep2/';
+    next = '/formStep3/';
   }
-  console.log(back);
-  console.log(next);
+  return [back, next];
 }

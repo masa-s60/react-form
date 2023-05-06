@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setBirthdayYear } from '../../../store/form-data-slice';
 import { useCreateYearsList } from '../../container/create-date';
-
+import { rootFormData } from "../../../types/types";
 const SelectYear = () => {
-  const [birthdayYear, setBirthdayYear] = useState<string>('1950(昭和25)');
+  const dispatch = useDispatch();
+  const selectYear = useSelector<rootFormData>((state) => state.formData.birthdayYear);
   const yearsListObject = useCreateYearsList();
   return(
     <div>
-      <select onChange={ e => setBirthdayYear(e.target.value)}>
+      <select value={selectYear as string} onChange={ e => dispatch(setBirthdayYear(e.target.value))}>
         {yearsListObject.yearsList.map( (item, index) => {
           return(
             <option key={index}>
-              {item}年　{yearsListObject.ErasList[index]}　
+              {item}年({yearsListObject.ErasList[index]})
             </option>
           )
         })}
