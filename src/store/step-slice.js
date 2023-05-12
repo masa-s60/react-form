@@ -12,7 +12,7 @@ export const stepSlice = createSlice({
       } else {
         step.stepNumber = step.stepNumber - 1;
       }
-      console.log(step.stepNumber);
+      // console.log(step.stepNumber);
     },
   }
 });

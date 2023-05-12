@@ -15,11 +15,11 @@ export const formDataSlice = createSlice({
   reducers: {
     setSex: (formData, action) => {
       formData.sex = action.payload;
-      console.log(formData.sex);
+      // console.log(formData.sex);
     },
     setBirthdayYear: (formData, action) => {
       formData.birthdayYear = action.payload;
-      console.log(formData.birthdayYear, formData.birthdayMonth);
+      // console.log(formData.birthdayYear, formData.birthdayMonth);
     },
     setBirthdayMonth: (formData, action) => {
       formData.birthdayMonth = action.payload;

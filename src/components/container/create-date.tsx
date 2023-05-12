@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { rootFormData } from "../../types/types";
 import { setBirthdayDay } from '../../store/form-data-slice';
-import { store } from '../../store/store'
+// import { store } from '../../store/store';
 
 export const CreateYearsList = () => {
   const yearsList: string[] = [];
@@ -44,9 +44,9 @@ export const CreateDaysList = (year: string, month: string) => {
     if(Number(selectedDay as string) > lastDay) {
       dispatch(setBirthdayDay('1'));
     }
-    console.log(`year:${store.getState().formData.birthdayYear}`);
-    console.log(`month:${store.getState().formData.birthdayMonth}`);
-    console.log(`day:${store.getState().formData.birthdayDay}`);
+    // console.log(`year:${store.getState().formData.birthdayYear}`);
+    // console.log(`month:${store.getState().formData.birthdayMonth}`);
+    // console.log(`day:${store.getState().formData.birthdayDay}`);
   });
   return newDaysList;
 }

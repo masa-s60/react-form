@@ -7,7 +7,6 @@ import { ChangeButtonTransition } from '../../container/change-button-transition
 const TransitionButton = () => {
   let [back, next] = ChangeButtonTransition();
   const stepNum = useSelector<rootStepNumber>((state) => state.formStep.stepNumber);
-  console.log(back, next);
 
   return(
     <div className="columns is-mobile is-centered">
