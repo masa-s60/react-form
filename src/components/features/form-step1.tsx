@@ -10,7 +10,11 @@ const FormStep1 = () => {
   return(
     <div className="block column is-8 is-offset-2 transition-animation" style={{border: 'solid 1.5px #00d890', borderRadius: '5px'}}>
         <form  id="app" action="">
-          <FormHead stepNum='1' checklist='お客様の情報を入力してください'/>
+          <FormHead 
+            stepNum='1' 
+            checklist='お客様の情報を入力してください' 
+            icon='fas fa-id-card'
+          />
           <Question 
             title='性別' 
             radioButtonItems={['男性', '女性']} 
