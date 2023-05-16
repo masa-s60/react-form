@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { rootFormData } from "../../types/types";
 import { setBirthdayDay } from '../../store/form-data-slice';
-// import { store } from '../../store/store';
 
 export const CreateYearsList = () => {
   const yearsList: string[] = [];
@@ -12,12 +11,10 @@ export const CreateYearsList = () => {
   const currentYear = currentDate.getFullYear();
   for(let i = 1950; i <= currentYear; i++) {;
     yearsList.push(String(i));
-    // console.log(yearsList);
     let targetYear = new Date(String(i));
     let pastEraData = targetYear.toLocaleString('ja-JP-u-ca-japanese', {era: 'short'});
     let pastEra = pastEraData.match(typeEra);
     if(pastEra !== null) ErasList.push(pastEra[0]);
-    // console.log(targetYear, pastEraData, pastEra[0])
   }
   return {yearsList, ErasList};
 }
@@ -44,9 +41,6 @@ export const CreateDaysList = (year: string, month: string) => {
     if(Number(selectedDay as string) > lastDay) {
       dispatch(setBirthdayDay('1'));
     }
-    // console.log(`year:${store.getState().formData.birthdayYear}`);
-    // console.log(`month:${store.getState().formData.birthdayMonth}`);
-    // console.log(`day:${store.getState().formData.birthdayDay}`);
   });
   return newDaysList;
 }
