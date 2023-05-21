@@ -1,15 +1,15 @@
-import { FC } from "react";
-import { useDispatch } from "react-redux";
-import { changeStep } from '../../../store/step-slice';
+import { FC, useContext } from 'react';
+import { stepContext } from '../../templates/form';
+import { typeStepNumberObject } from '../../../types/types';
+const Button:FC<{buttonValue: string, transition: number}> = (props) => {
+  const {setStepNumber} = useContext(stepContext) as Required<typeStepNumberObject>;
 
-const Button:FC<{buttonValue: string}> = (props) => {
-  const dispatch = useDispatch();
   return(
     <div className="column">
       <button 
         className="button is-success" 
         type="button" 
-        onClick={ () => dispatch(changeStep(props.buttonValue))}>
+        onClick={ () => setStepNumber(props.transition)}>
           {props.buttonValue}<b>　&gt;</b>
       </button>
     </div>

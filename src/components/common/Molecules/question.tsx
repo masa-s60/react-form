@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import SelectButtons from '../atoms/select-button';
 import QuestionItem from '../atoms/question-item';
 const Question:FC<{title: string, radioButtonItems?: string[], reducer: Function, state: string, labelID?: string[]}> = (props) => {

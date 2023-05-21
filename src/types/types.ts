@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export type sexStatus = '男性' | '女性';
 
@@ -12,15 +12,12 @@ export type typeFormData = {
   operated: string,
   consultation: string,
 }
+
 export type rootFormData = {
   formData: typeFormData
 }
 
-export type typeStepNumber = {
-  stepNumber: number
+export type typeStepNumberObject = {
+  stepNumber: number,
+  setStepNumber: Dispatch<SetStateAction<number>>,
 }
-export type rootStepNumber = {
-  formStep: typeStepNumber
-}
-
-// type taskListArray<T> = Record<'comment' | 'status', T | ('作業中' | '完了')>;

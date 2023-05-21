@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import FormHead from '../common/Molecules/form-head';
 import Question from '../common/Molecules/question';
 import Birthday from '../common/Molecules/birthday';
 import { setSex } from '../../store/form-data-slice';
-import { rootFormData } from '../../types/types'
+import { rootFormData } from '../../types/types';
 const FormStep1 = () => {
   const sexState = useSelector<rootFormData>((state) => state.formData.sex);
 

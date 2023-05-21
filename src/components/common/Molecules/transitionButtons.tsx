@@ -1,23 +1,20 @@
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useContext } from 'react';
 import Button from '../atoms/button';
-import { rootStepNumber } from "../../../types/types";
+import { stepContext } from '../../templates/form';
 import { ChangeButtonTransition } from '../../container/change-button-transition';
-
+import { typeStepNumberObject } from '../../../types/types';
 const TransitionButton = () => {
-  let [back, next] = ChangeButtonTransition();
-  const stepNum = useSelector<rootStepNumber>((state) => state.formStep.stepNumber);
-
+  const { stepNumber } = useContext(stepContext) as Required<typeStepNumberObject>;
+  const [back, next] = ChangeButtonTransition();
+  
   return(
-    <div className="columns is-mobile is-centered">
+    <div className="columns">
       {(() => {
-        if(stepNum !== 1) {
-          return <Link to={back as string}><Button buttonValue='前へ戻る'/></Link>;
+        if(stepNumber !== 1) {
+          return <Button buttonValue='前へ戻る' transition={back as number}/>
         }
       })()}
-      <Link to={next as string}>
-        <Button buttonValue='次へ進む'/>
-      </Link>
+      <Button buttonValue='次へ進む' transition={next as number}/>
     </div>
   )
 }

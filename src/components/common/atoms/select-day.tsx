@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setBirthdayDay } from '../../../store/form-data-slice';
 import { CreateDaysList } from '../../container/create-date';
-import { rootFormData } from "../../../types/types";
+import { rootFormData } from '../../../types/types';
 
 const SelectDay = () => {
   const dispatch = useDispatch();

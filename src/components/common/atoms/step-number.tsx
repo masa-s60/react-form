@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 const StepNumber:FC<{stepNum: string}> = (props) => {
   return(
     <div style={{position: 'absolute', borderRadius: '4px'}} className="column has-background-info has-text-white-ter p-1">

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { rootFormData } from "../../types/types";
+import { rootFormData } from '../../types/types';
 import { setBirthdayDay } from '../../store/form-data-slice';
 
 export const CreateYearsList = () => {

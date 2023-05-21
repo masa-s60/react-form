@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 const SelectButton:FC<{radioButtonItems: string[], reducer: Function, state: string, labelID: string[] }> = (props) => {

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 const ChecklistTitle:FC<{checklist: string, icon: string}> = (props) => {
   return(
     <div className="column is-12 has-background-primary-light has-text-centered" style={{borderRadius: '5px'}}>

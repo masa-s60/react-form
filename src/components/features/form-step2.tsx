@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import FormHead from '../common/Molecules/form-head';
 import Question from '../common/Molecules/question';
 import { setLifeInsurance, setHospitalization, setOperated } from '../../store/form-data-slice';

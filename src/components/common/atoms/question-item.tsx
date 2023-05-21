@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 const QuestionItem:FC<{title: string}> = (props) => {
   return(
     <div className="mb-3 ">

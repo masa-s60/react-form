@@ -1,19 +1,21 @@
-import { useSelector } from "react-redux";
-import { rootStepNumber } from "../../types/types";
+import { useContext } from 'react';
+import { stepContext } from '../templates/form';
+import { typeStepNumberObject } from '../../types/types';
 
 export const ChangeButtonTransition = () => {
-  const stepNum = useSelector<rootStepNumber>((state) => state.formStep.stepNumber);
+  const { stepNumber } = useContext(stepContext) as Required<typeStepNumberObject>;
+
   let back;
   let next;
-  if(stepNum === 1) {
-    back = '/';
-    next = '/formStep2/';
-  } else if(stepNum === 2) {
-    back = '/';
-    next = '/formStep3/';
-  } else if(stepNum === 3) {
-    back = '/formStep2/';
-    next = '/formStep3/';
+  if(stepNumber === 1) {
+    back = 1;
+    next = 2;
+  } else if(stepNumber === 2) {
+    back = 1;
+    next = 3;
+  } else if(stepNumber === 3) {
+    back = 2;
+    next = 4;
   }
   return [back, next];
 }

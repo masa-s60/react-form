@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setBirthdayMonth } from '../../../store/form-data-slice';
 import { CreateMonthsList } from '../../container/create-date';
-import { rootFormData } from "../../../types/types";
+import { rootFormData } from '../../../types/types';
 
 const SelectMonth = () => {
   const dispatch = useDispatch();
