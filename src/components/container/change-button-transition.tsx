@@ -16,6 +16,9 @@ export const ChangeButtonTransition = () => {
   } else if(stepNumber === 3) {
     back = 2;
     next = 4;
+  } else if(stepNumber === 4) {
+    back = 3;
+    next = 5;
   }
   return [back, next];
 }

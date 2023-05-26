@@ -2,7 +2,8 @@ import { useState, createContext } from 'react';
 import FormStep1 from '../features/form-step1';
 import FormStep2 from '../features/form-step2';
 import FormStep3 from '../features/form-step3';
-import TransitionButtons from '../common/Molecules/transitionButtons';
+import FormStep4 from '../features/form-step4';
+import TransitionButtons from '../common/Molecules/transition-buttons';
 import { typeStepNumberObject } from '../../types/types';
 export const stepContext = createContext<Partial<typeStepNumberObject>>({});
 
@@ -25,9 +26,13 @@ const Form = () => {
           return(
             <FormStep2/>
           )
-        } else {
+        } else if(stepNumber === 3) {
           return(
             <FormStep3/>
+          )
+        } else {
+          return(
+            <FormStep4/>
           )
         }
       })()}

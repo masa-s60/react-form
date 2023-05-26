@@ -14,7 +14,13 @@ const TransitionButton = () => {
           return <Button buttonValue='前へ戻る' transition={back as number}/>
         }
       })()}
-      <Button buttonValue='次へ進む' transition={next as number}/>
+      {(() => {
+        if(stepNumber === 4) {
+          return <Button buttonValue='送信' transition={back as number}/>
+        } else {
+          return <Button buttonValue='次へ進む' transition={next as number}/>
+        }
+      })()}
     </div>
   )
 }
