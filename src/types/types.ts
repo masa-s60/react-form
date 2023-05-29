@@ -21,3 +21,11 @@ export type typeStepNumberObject = {
   stepNumber: number,
   setStepNumber: Dispatch<SetStateAction<number>>,
 }
+
+export type typeTransitionHandlingItem = {
+  buttonValue: string,
+  transitionNum: number,
+  stepNumber: number, 
+  setStepNumber: Dispatch<SetStateAction<number>>,
+  formData: typeFormData,
+}

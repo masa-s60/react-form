@@ -1,10 +1,10 @@
 // import { FC } from "react";
 // import { useDispatch, useSelector } from 'react-redux';
-import {store} from '../../../store/store';
+import { store } from '../../../store/store';
 import QuestionItem from '../atoms/question-item';
 const InputConfirm = () => {
   const formState = store.getState().formData;
-  
+  const ADOnly = formState.birthdayYear.match(/^\d*/);
   return(
     <div>
       <div className='block'>
@@ -13,7 +13,7 @@ const InputConfirm = () => {
       </div>
       <div className='block'>
         <QuestionItem title='生年月日'/>
-        <p className='ml-4'>{formState.birthdayYear}年{formState.birthdayMonth}月{formState.birthdayDay}日</p>
+        <p className='ml-4'>{ADOnly![0]}年{formState.birthdayMonth}月{formState.birthdayDay}日</p>
       </div>
       <div className='block'>
         <QuestionItem title='現在、生命保険に加入されていますか？'/>
