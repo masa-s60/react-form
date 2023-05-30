@@ -4,11 +4,13 @@ import Question from '../common/Molecules/question';
 import Birthday from '../common/Molecules/birthday';
 import { setSex } from '../../store/form-data-slice';
 import { rootFormData } from '../../types/types';
+import { borderStyle } from '../../styles/form-style';
+
 const FormStep1 = () => {
   const sexState = useSelector<rootFormData>((state) => state.formData.sex);
 
   return(
-    <div className="block column is-8 is-offset-2 transition-animation" style={{border: 'solid 1.5px #00d890', borderRadius: '5px'}}>
+    <div className="block column is-8 is-offset-2 transition-animation" style={borderStyle}>
       <FormHead 
         stepNum='1' 
         checklist='お客様の情報を入力してください' 

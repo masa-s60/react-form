@@ -2,14 +2,16 @@ import { useSelector } from 'react-redux';
 import FormHead from '../common/Molecules/form-head';
 import Question from '../common/Molecules/question';
 import { setLifeInsurance, setHospitalization, setOperated } from '../../store/form-data-slice';
-import { rootFormData } from '../../types/types'
+import { rootFormData } from '../../types/types';
+import { borderStyle } from '../../styles/form-style';
+
 const FormStep2 = () => {
   const lifeInsuranceState = useSelector<rootFormData>((state) => state.formData.lifeInsurance);
   const hospitalizationState = useSelector<rootFormData>((state) => state.formData.hospitalization);
   const operatedState = useSelector<rootFormData>((state) => state.formData.operated);
 
   return(
-    <div className="block column is-8 is-offset-2 transition-animation" style={{border: 'solid 1.5px #00d890', borderRadius: '5px'}}>
+    <div className="block column is-8 is-offset-2 transition-animation" style={borderStyle}>
       <FormHead 
         stepNum='2' 
         checklist='以下にお答えください'
