@@ -9,24 +9,28 @@ export const stepContext = createContext<Partial<typeStepNumberObject>>({});
 
 const Form = () => {
   const [stepNumber, setStepNumber] = useState(1);
-
   const stepNumberObject: typeStepNumberObject = {
     stepNumber,
     setStepNumber
   }
-  
+  const SURVEY_STEP = {
+    FORM_STEP1: 1,
+    FORM_STEP2: 2,
+    FORM_STEP3: 3,
+  }
+
   return(
     <div>
       {( () => {
-        if(stepNumber === 1) {
+        if(stepNumber === SURVEY_STEP.FORM_STEP1) {
           return(
             <FormStep1/>
           )
-        } else if(stepNumber === 2) {
+        } else if(stepNumber === SURVEY_STEP.FORM_STEP2) {
           return(
             <FormStep2/>
           )
-        } else if(stepNumber === 3) {
+        } else if(stepNumber === SURVEY_STEP.FORM_STEP3) {
           return(
             <FormStep3/>
           )

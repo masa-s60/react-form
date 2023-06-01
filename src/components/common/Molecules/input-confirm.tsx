@@ -1,10 +1,10 @@
-// import { FC } from "react";
-// import { useDispatch, useSelector } from 'react-redux';
 import { store } from '../../../store/store';
 import QuestionItem from '../atoms/question-item';
+
 const InputConfirm = () => {
   const formState = store.getState().formData;
   const ADOnly = formState.birthdayYear.match(/^\d*/);
+  
   return(
     <div>
       <div className='block'>
